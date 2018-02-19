@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "es6":     true,
+    "browser": true,
+    "node":    true,
+    "jest":   true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+        "js": true,
+        "modules": true
+    }
+  },
+  "plugins": [
+    "react"
+  ]
+}
