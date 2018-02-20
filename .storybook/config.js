@@ -16,6 +16,8 @@ setTimeout(() => setOptions({
 }), 1000);
 
 function loadStories() {
+  require('../src/MadeWith/MadeWith.stories.js');
+  require('../src/Author/Author.stories.js');
 }
 
 configure(loadStories, module);
