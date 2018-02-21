@@ -1,19 +1,19 @@
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faUserSecret, faPlus } from '@fortawesome/fontawesome-free-solid';
 
 import MadeWith from './index';
-// import README from './README.md';
+import README from './README.md';
 
-// const wrapComponent = (component) => (
-//   withInfo(README)(() => component)
-// );
+const wrapComponent = (component) => (
+  withInfo(README)(() => component)
+);
 
 storiesOf('Made With', module)
-  .add('basic usage', () => (
+  .add('basic usage', wrapComponent(
     <MadeWith
       love
       react
@@ -22,7 +22,7 @@ storiesOf('Made With', module)
       }}
     />
   ))
-  .add('with email address', () => (
+  .add('with email address', wrapComponent(
     <MadeWith
       love
       react
@@ -33,7 +33,7 @@ storiesOf('Made With', module)
       }}
     />
   ))
-  .add('with icon as display', () => (
+  .add('with icon as display', wrapComponent(
     <MadeWith
       react
       love
@@ -44,7 +44,7 @@ storiesOf('Made With', module)
       }}
     />
   ))
-  .add('custom separator', () => (
+  .add('custom separator', wrapComponent(
     <MadeWith
       love
       react
