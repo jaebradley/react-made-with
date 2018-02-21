@@ -5,31 +5,31 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faUserSecret } from '@fortawesome/fontawesome-free-solid';
 
 import Maker from './index';
-// import README from './README.md';
+import README from './README.md';
 
-// const wrapComponent = (component) => (
-//   withInfo(README)(() => component)
-// );
+const wrapComponent = (component) => (
+  withInfo(README)(() => component)
+);
 
 storiesOf('Maker', module)
-  .add('basic usage', () => (
+  .add('basic usage', wrapComponent(
     <Maker identifier={ 'Jae Bradley' } />
   ))
-  .add('with email address, no icon', () => (
+  .add('with email address, no icon', wrapComponent(
     <Maker identifier={ 'jae.b.bradley@gmail.com' } showIcon={ false } />
   ))
-  .add('Twitter URL with icon and inferred display name', () => (
+  .add('Twitter URL with icon and inferred display name', wrapComponent(
     <Maker identifier={ 'https://twitter.com/jaebradley' } />
   ))
-  .add('GitHub URL with icon and explicit display name', () => (
+  .add('GitHub URL with icon and explicit display name', wrapComponent(
     <Maker identifier={ 'https://github.com/jaebradley' } display={ 'Jae Bradley' } />
   ))
-  .add('with email address and envelope icon', () => (
+  .add('with email address and envelope icon', wrapComponent(
     <Maker identifier={ 'jae.b.bradley@gmail.com' } />
   ))
-  .add('url without explicit display name', () => (
+  .add('url without explicit display name', wrapComponent(
     <Maker identifier={ 'https://example.com' } />
   ))
-  .add('url with explicit display name', () => (
+  .add('url with explicit display name', wrapComponent(
     <Maker identifier={ 'https://example.com' } display={ 'Example Dot Com' } />
   ));
