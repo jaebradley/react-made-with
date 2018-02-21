@@ -17,7 +17,7 @@ setTimeout(() => setOptions({
 
 function loadStories() {
   require('../src/MadeWith/MadeWith.stories.js');
-  require('../src/Author/Author.stories.js');
+  require('../src/Maker/Maker.stories.js');
 }
 
 configure(loadStories, module);
