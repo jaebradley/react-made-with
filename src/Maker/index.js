@@ -4,10 +4,10 @@ import isEmail from 'isemail';
 import urlParse from 'url';
 import parseGitHubUrl from 'parse-github-url';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/fontawesome-free-solid';
+import { faEnvelope, faLink } from '@fortawesome/fontawesome-free-solid';
 import { faTwitter, faGithub } from '@fortawesome/fontawesome-free-brands';
 
-class Author extends Component {
+class Maker extends Component {
   constructor(props) {
     super(props);
   }
@@ -26,7 +26,13 @@ class Author extends Component {
             { display || identifier }
           </a>
           { showIcon &&
-            <span className={ 'author-icon' }> { <FontAwesomeIcon icon={ faEnvelope } style={ { color: iconColor } }/> }</span>
+            <span className={ 'maker-icon' }>
+              { ' ' }
+              <FontAwesomeIcon
+                icon={ faEnvelope }
+                style={ { color: iconColor } }
+              />
+            </span>
           }
         </span>
       );
@@ -41,19 +47,20 @@ class Author extends Component {
       if (url.hostname === 'twitter.com') {
         icon = <FontAwesomeIcon icon={ faTwitter } style={ { color: iconColor || '#00aced' } } />
         // https://stackoverflow.com/questions/5948051/regex-extract-twitterusername-from-url#comment43986805_5948248
-        username = identifier.match(/^https?:\/\/(www\.)?twitter\.com\/(#!\/)?([^/]+)(\/\w+)*$/)[3];
+        username = `@${identifier.match(/^https?:\/\/(www\.)?twitter\.com\/(#!\/)?([^/]+)(\/\w+)*$/)[3]}`;
       } else if (url.hostname === 'github.com') {
         icon = <FontAwesomeIcon icon={ faGithub } style={ { color: iconColor || 'black' } } />
-        username = parseGitHubUrl(identifier).owner;
+        username = `@${parseGitHubUrl(identifier).owner}`;
       } else {
-        return <a href={ identifier }>{ display || identifier }</a>;
+        icon = <FontAwesomeIcon icon={ faLink } style={ { color: iconColor || 'black' } } />
+        username = identifier;
       }
 
       return (
         <span>
-          <a href={ identifier }>{ display || `@${username}` }</a>
+          <a href={ identifier }>{ display || username }</a>
           { showIcon &&
-            <span className={'author-icon'}> { icon }</span> }
+            <span className={'maker-icon'}> { icon }</span> }
         </span>
       );
     }
@@ -62,17 +69,18 @@ class Author extends Component {
   }
 }
 
-Author.defaultProps = {
-  displayName: '',
+Maker.defaultProps = {
+  identifier: '',
+  display: '',
   showIcon: true,
   iconColor: '',
 };
 
-Author.propTypes = {
-  identifier: PropTypes.string.isRequired,
+Maker.propTypes = {
+  identifier: PropTypes.string,
   display: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   showIcon: PropTypes.bool,
   iconColor: PropTypes.string,
 };
 
-export default Author;
+export default Maker;

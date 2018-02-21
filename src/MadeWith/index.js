@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import buildIcons from './buildIcons';
-import Author from '../Author';
+import Maker from '../Maker';
 
 class MadeWith extends Component {
   constructor(props) {
@@ -22,18 +22,18 @@ class MadeWith extends Component {
   }
 
   render() {
-    const { className, author } = this.props;
+    const { className, maker } = this.props;
     return (
       <div className={ classNames(className, 'made-with') }>
         Made with
         { ' ' }
         { this.buildIcons() }
-        { author &&
-          <span className={ 'author-wrapper' }> by
+        { maker &&
+          <span className={ 'maker-wrapper' }> by
             { ' ' }
-            <Author
-              className={ 'author' }
-              { ...author }
+            <Maker
+              { ...maker }
+              className={ 'maker' }
             />
           </span>
         }
@@ -43,7 +43,7 @@ class MadeWith extends Component {
 }
 
 MadeWith.defaultProps = {
-  author: {
+  maker: {
     display: '',
     showIcon: true,
     iconColor: '',
@@ -55,7 +55,7 @@ MadeWith.defaultProps = {
 }
 
 MadeWith.propTypes = {
-  author: PropTypes.shape({
+  maker: PropTypes.shape({
     identifier: PropTypes.string.isRequired,
     display: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     showIcon: PropTypes.bool,

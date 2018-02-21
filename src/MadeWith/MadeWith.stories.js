@@ -17,7 +17,7 @@ storiesOf('Made With', module)
     <MadeWith
       love
       react
-      author={{
+      maker={{
         identifier: 'https://github.com/jaebradley'
       }}
     />
@@ -26,7 +26,7 @@ storiesOf('Made With', module)
     <MadeWith
       love
       react
-      author={{
+      maker={{
         identifier: 'jae.b.bradley@gmail.com',
         display: 'Jae Bradley',
         iconColor: 'blue',
@@ -37,7 +37,7 @@ storiesOf('Made With', module)
     <MadeWith
       react
       love
-      author={{
+      maker={{
         identifier: 'https://github.com/jaebradley',
         display: <FontAwesomeIcon icon={ faUserSecret } />,
         showIcon: false,
@@ -49,7 +49,7 @@ storiesOf('Made With', module)
       love
       react
       separator={ <FontAwesomeIcon icon={ faPlus } /> }
-      author={{
+      maker={{
         identifier: 'https://github.com/jaebradley'
       }}
     />
