@@ -40,7 +40,7 @@
     "@commitlint/prompt": "^6.1.0",
     "@commitlint/prompt-cli": "^6.1.0",
     "@storybook/addon-a11y": "^3.3.13",
-    "@storybook/addon-actions": "^3.3.13",
+    "@storybook/addon-actions": "^4.1.0",
     "@storybook/addon-centered": "^4.1.0",
     "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-info": "^3.3.13",
