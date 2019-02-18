@@ -44,7 +44,7 @@
     "@storybook/addon-centered": "^4.1.12",
     "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-info": "^4.1.12",
-    "@storybook/addon-options": "^3.3.13",
+    "@storybook/addon-options": "^4.1.12",
     "@storybook/addon-storyshots": "^4.1.12",
     "@storybook/channels": "^4.1.12",
     "@storybook/react": "^4.1.12",
