@@ -65,7 +65,7 @@
     "travis-deploy-once": "^5.0.0",
     "webpack": "^4.0.1",
     "webpack-build-notifier": "^0.1.22",
-    "webpack-dev-server": "^3.1.0"
+    "webpack-dev-server": "^3.2.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.3",
