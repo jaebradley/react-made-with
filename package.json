@@ -47,7 +47,7 @@
     "@storybook/addon-options": "^3.3.13",
     "@storybook/addon-storyshots": "^4.1.13",
     "@storybook/channels": "^4.1.13",
-    "@storybook/react": "^3.3.13",
+    "@storybook/react": "^4.1.13",
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
