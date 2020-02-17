@@ -60,7 +60,7 @@
     "eslint-plugin-react": "^7.6.1",
     "husky": "^0.14.3",
     "jest": "^22.3.0",
-    "semantic-release": "^15.0.0",
+    "semantic-release": "^17.0.4",
     "source-map-loader": "^0.2.3",
     "travis-deploy-once": "^5.0.0",
     "webpack": "^4.0.1",
